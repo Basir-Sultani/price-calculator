@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	<title>Ordering form</title> 
+	<script src="linked.js"></script>
+</head>
+<style>
+	body{
+		margin: 0px;
+		padding: 0px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-family: 'Lato' !important;
+		min-height: 100vh;
+	}
+	.bg-img{
+		/* The image used */
+    	background-image: url("pizza.jpg");
+		min-height: 575px;
+		/* Center and scale the image nicely */
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	p{
+		font-size: 1em;
+		padding: 8px;
+	}
+	.card {
+		display:fix;
+		float:left;
+		margin: 2em;
+		margin-top: 13%;
+		min-width: 0;
+		padding: 0.1rem;
+		word-wrap: break-word;
+		background-color: rgba(243, 243, 243, 0.591);
+		background-clip: border-box;
+		border: 1px solid rgba(0, 0, 0, 0.125);
+		border-radius: .25rem;
+		
+		min-height: 50vh;
+  }
+  input{
+	  border-radius: .50rem;
+	  padding: .5rem;
+  }
+  .pizzaTitle{
+	color: #bb3e00;
+  }
+  .submitBtn{
+	  border: none;
+	  padding: .5rem 2rem;
+  }
+  .submitBtn:hover{
+	  padding: .6rem 2.3rem;
+	  background-color: #ffffff;
+	  transition-duration: .3s;
+  }
+  #message{
+	  margin:0 30%;
+	  padding: 0.6rem;
+	  border-top: 2px #bb3e00 solid;
+	  border-bottom: 2px #bb3e00 solid;
+  }
+</style>
+
+	<body>
+		<div class="bg-img">
+			<div class="card">
+				<h1 class="pizzaTitle">PizzasOnly</h1>
+				<p>Simply enter the number of pizzas you want into the input below to find out the cost of your order</p>
+				<form action="" method="post" id="orderForm" onsubmit="CostCalculator()">
+					
+					<p>
+						<label for="quantity">Enter number of pizzas wanted:</label>
+						<input type="text" name="quantity" id="quantity" onplay="CostCalculator()">
+						
+					</p>
+					<p>
+						<input type="button" class="submitBtn" value="Total Cost" onclick="CostCalculator()" >
+
+					</p>
+				</form>
+					<div id="message"></div>
+			</div>
+		</div>
+	</body>
+</html>
